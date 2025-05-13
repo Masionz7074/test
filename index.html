@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better Bedrock</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Link to Google Font (Example: Pixelify Sans or Press Start 2P) -->
+    <!-- Choose ONE of the following links if you want a pixel font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <!-- Or -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> -->
+
+    <!-- OR if using local font files, include @font-face in style.css -->
+
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">BB BETTER BEDROCK</div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link clickable-element">Home</a></li>
+                    <li><a href="#" class="nav-link clickable-element">Download</a></li>
+                    <li><a href="#" class="nav-link clickable-element">Discord</a></li>
+                    <li><a href="#" class="nav-link clickable-element" id="settings-link">Settings</a></li>
+                    <li><a href="#" class="nav-link clickable-element">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section background1">
+        <div class="section-content centered-content">
+            <div class="main-bb-logo">BB</div>
+            <h1>BETTER BEDROCK</h1>
+            <p>is the most powerful, customizable, useful and free Texture Pack available on the majority of platforms!</p>
+            <div class="buttons">
+                <a href="#" class="button download-button clickable-element">Download</a>
+                <a href="#" class="button discord-button clickable-element">Discord</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section background2">
+        <div class="section-content">
+            <div class="features-grid">
+                <div class="feature-item mod-menu-block">
+                    <h3>MOD MENU</h3>
+                    <p>Includes many adjustable modules and options to customize default HUD elements!</p>
+                </div>
+                <div class="feature-item mod-screenshot-block">
+                     <img src="image/mod_menu_screenshot.png" alt="Mod Menu Screenshot">
+                     <h4>CUSTOM UIS</h4>
+                     <p>Most main screens have been rewritten to hatch new upcoming Minecraft UI, the OneUI.</p>
+                </div>
+                 <div class="feature-item main-screenshot-block">
+                     <img src="image/main_menu_screenshot.png" alt="Main Menu Screenshot">
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="creators-section background3">
+        <div class="section-content centered-content">
+            <h2>CREATORS</h2>
+            <div class="creators-list">
+                <div class="creator-card">
+                    <img src="image/ambro_head.png" alt="Ambro's Head">
+                    <h3>AMBRO</h3>
+                    <ul>
+                        <li>. Texture Pack</li>
+                        <li>. Discord</li>
+                    </ul>
+                </div>
+                 <div class="creator-card">
+                    <img src="image/idkrad_head.png" alt="Idkrad's Head">
+                    <h3>IDKRAD</h3>
+                    <ul>
+                        <li>. Mobile App</li>
+                        <li>. Website</li>
+                        <li>. Windows Client</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>Copyright &copy; Better Bedrock | All rights reserved | Not affiliated with Mojang Studios</p>
+        </div>
+    </footer>
+
+    <!-- Visual Custom Scrollbar Placeholder -->
+    <div class="custom-scrollbar">
+         <div class="scrollbar-track"></div>
+         <div class="scrollbar-handle"></div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h3>Settings</h3>
+
+            <div class="setting-row">
+                <label for="music-toggle">Music:</label>
+                <button id="music-toggle" class="setting-toggle clickable-element">On</button>
+            </div>
+
+             <div class="setting-row">
+                <label for="music-volume">Music Volume:</label>
+                <input type="range" id="music-volume" min="0" max="100" value="50" class="custom-slider clickable-element">
+            </div>
+
+            <div class="setting-row">
+                <label for="click-toggle">Click Sound:</label>
+                <button id="click-toggle" class="setting-toggle clickable-element">On</button>
+            </div>
+
+             <div class="setting-row">
+                <label for="click-volume">Click Volume:</label>
+                <input type="range" id="click-volume" min="0" max="100" value="100" class="custom-slider clickable-element">
+            </div>
+
+            <button id="close-settings" class="button clickable-element">Close</button>
+        </div>
+    </div>
+
+
+    <!-- Audio Elements (Hidden) -->
+    <audio id="minecraft-click" src="sounds/minecraftclick.mp3" preload="auto"></audio>
+    <audio id="main-music" src="sounds/mainmusic.mp3" loop preload="auto"></audio>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>

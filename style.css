@@ -1,0 +1,714 @@
+/* style.css */
+
+/* --- Custom Font (Choose ONE method below or remove) --- */
+
+/* Method 1: If using local font files (e.g., in a 'fonts' folder) */
+/* Uncomment and adjust paths if using this method */
+/*
+@font-face {
+    font-family: 'MyPixelFont';
+    src: url('fonts/my-pixel-font.woff2') format('woff2'),
+         url('fonts/my-pixel-font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+*/
+
+
+/* --- Basic Reset and Body Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Apply font. If using Google Fonts, use 'Pixelify Sans' or 'Press Start 2P'. */
+    /* If using @font-face, use 'MyPixelFont'. Keep fallbacks. */
+    font-family: 'Pixelify Sans', Arial, sans-serif; /* Or 'Press Start 2P', cursive; or 'MyPixelFont' */
+    color: #333; /* Default text color */
+    line-height: 1.6; /* Adjust line height as pixel fonts can be tall */
+    overflow-x: hidden; /* Prevent horizontal scroll from custom scrollbar */
+    position: relative; /* Needed for absolute/fixed children */
+}
+
+/* --- Apply Custom Font to Specific Elements (If not applied to body) --- */
+/* Uncomment and adjust if you only want the font on certain elements */
+/*
+.logo,
+.main-bb-logo,
+h1, h2, h3, h4, h5, h6,
+.button,
+.modal-content h3,
+.setting-row label,
+.setting-toggle {
+     font-family: 'Pixelify Sans', sans-serif; // Or your chosen font
+}
+*/
+
+
+/* --- Header --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 15px 20px;
+    z-index: 1000; /* Keep header on top */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333; /* Adjust color if needed */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Space between links */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #007bff; /* Example hover color */
+}
+
+/* --- Sections --- */
+section {
+    width: 100%;
+    min-height: 100vh; /* Full viewport height */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex; /* Use flexbox for content alignment */
+    justify-content: center; /* Center content horizontally by default */
+    align-items: center; /* Center content vertically by default */
+    text-align: center; /* Default text alignment */
+    padding: 80px 20px 20px; /* Add padding to account for fixed header */
+    position: relative; /* Needed for internal absolute positioning if any */
+}
+
+/* Background Images */
+.background1 {
+    background-image: url('image/background1.png');
+}
+
+.background2 {
+    background-image: url('image/background2.png');
+}
+
+.background3 {
+    background-image: url('image/background3.png');
+}
+
+/* Content Container */
+.section-content {
+    max-width: 1000px; /* Max width for content */
+    width: 100%; /* Ensure it takes full width up to max-width */
+    margin: 0 auto; /* Center content horizontally */
+    padding: 20px; /* Padding inside content area */
+    position: relative; /* Needed for z-index or positioning */
+    z-index: 2; /* Ensure content is above background */
+}
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* --- Hero Section Specific Styles --- */
+.hero-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: white; /* Assuming light text color on dark background */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional shadow for readability */
+}
+
+.hero-section .main-bb-logo {
+    font-size: 6em; /* Large size for BB */
+    font-weight: bold;
+    color: white; /* Adjust color if different in image */
+    margin-bottom: 5px;
+     /* If using a pixelated font or image, adjust here */
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #eee; /* Lighter text for paragraph */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Optional shadow */
+}
+
+.hero-section .buttons {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+    justify-content: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    min-width: 150px; /* Ensure buttons have a minimum width */
+    text-align: center;
+    cursor: pointer; /* Indicate it's clickable */
+}
+
+.download-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+.download-button:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+}
+
+.discord-button {
+    background-color: #d3d3d3; /* Light gray */
+    color: #333;
+    border: 1px solid #d3d3d3;
+}
+
+.discord-button:hover {
+    background-color: #c0c0c0;
+    border-color: #c0c0c0;
+}
+
+
+/* --- Features Section Specific Styles --- */
+.features-section {
+    align-items: flex-start; /* Align content to top */
+    text-align: left; /* Align text left */
+    color: white; /* Assuming light text on dark background */
+}
+
+.features-section .section-content {
+     /* Remove centering, allow flow layout */
+     display: block;
+     padding-top: 50px; /* Add some space at the top of the content */
+}
+
+.features-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 40px; /* Space between blocks */
+    justify-content: center; /* Center blocks if they don't fill the width */
+    align-items: flex-start; /* Align items to the top of the grid row */
+}
+
+.feature-item {
+    flex-basis: 45%; /* Allow items to take up about half the container width */
+    max-width: 450px; /* Max width for consistency */
+}
+
+.mod-menu-block {
+    margin-top: 100px; /* Adjust to create the staggered effect */
+    text-align: right; /* Align text right */
+}
+
+.mod-menu-block h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.mod-menu-block p {
+    font-size: 1.1em;
+}
+
+
+.mod-screenshot-block {
+    margin-top: 0; /* Align to top of flex container initially */
+}
+
+.mod-screenshot-block img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #555; /* Optional border around screenshot */
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3); /* Optional shadow */
+    margin-bottom: 15px;
+}
+
+.mod-screenshot-block h4 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.mod-screenshot-block p {
+    font-size: 1em;
+    color: #ccc; /* Slightly lighter text */
+}
+
+.main-screenshot-block {
+     flex-basis: 60%; /* Larger width for the second screenshot */
+     max-width: 600px;
+     margin-top: -80px; /* Pull it up significantly */
+     margin-left: auto; /* Push it to the right */
+     margin-right: 0;
+     position: relative; /* Needed for z-index */
+     z-index: 1; /* Ensure it's behind the mod menu text block visually */
+}
+
+.main-screenshot-block img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #555; /* Optional border */
+     box-shadow: 5px 5px 10px rgba(0,0,0,0.3); /* Optional shadow */
+}
+
+/* Adjustments for features grid flow */
+/* The layout in the image is tricky. Let's refine the flex basis and order */
+.features-grid > .mod-menu-block { order: 2; }
+.features-grid > .mod-screenshot-block { order: 1; }
+.features-grid > .main-screenshot-block { order: 3; flex-basis: 90%; margin-left: auto; margin-right: auto; margin-top: -50px; } /* Center and pull up the large screenshot */
+
+
+/* --- Creators Section Specific Styles --- */
+.creators-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: white; /* Assuming light text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.creators-list {
+    display: flex;
+    gap: 30px; /* Space between creator cards */
+    justify-content: center;
+    flex-wrap: wrap; /* Allow cards to wrap on small screens */
+}
+
+.creator-card {
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1; /* Allow cards to grow and shrink */
+    min-width: 250px; /* Minimum width for cards */
+    max-width: 350px; /* Maximum width for cards */
+}
+
+.creator-card img {
+    width: 80px; /* Adjust size as needed */
+    height: 80px;
+    border-radius: 50%; /* Make image round */
+    margin-bottom: 15px;
+    border: 2px solid #555; /* Optional border */
+}
+
+.creator-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.creator-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left; /* Align list items left */
+}
+
+.creator-card li {
+    margin-bottom: 5px;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #f0f0f0; /* Match header/card background */
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Custom Scrollbar Placeholder --- */
+.custom-scrollbar {
+    position: fixed;
+    top: 0;
+    right: 15px; /* Distance from the right edge */
+    height: 100vh;
+    width: 8px; /* Width of the scrollbar track */
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black track */
+    z-index: 1001; /* Above header */
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+.scrollbar-track {
+     /* The container (.custom-scrollbar) acts as the track */
+}
+
+.scrollbar-handle {
+    position: absolute;
+    /* Position the handle visually based on the first image (near top) */
+    top: 15vh; /* Example position */
+    left: -2px; /* Center handle over track - adjust based on width */
+    width: 12px; /* Width of the handle */
+    height: 80px; /* Height of the handle - adjust as needed */
+    background-color: white; /* White handle */
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+
+/* --- Settings Modal Styles --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent overlay */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Above everything */
+    display: none; /* Hidden by default */
+}
+
+.modal-content {
+    background-color: #f0f0f0; /* Light background, similar to cards */
+    color: #333;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 500px; /* Max width for the modal */
+    width: 90%; /* Responsive width */
+    text-align: left; /* Align text left inside modal */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative; /* Needed for potential positioning of close button etc. */
+}
+
+.modal-content h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.setting-row label {
+    font-size: 1.1em;
+    margin-right: 15px; /* Space between label and control */
+     flex-shrink: 0; /* Prevent label from shrinking */
+}
+
+.setting-toggle {
+    background-color: #4CAF50; /* Green for On */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    min-width: 80px; /* Fixed width for toggle button */
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.setting-toggle:hover {
+     opacity: 0.9;
+}
+
+/* Style for the "Off" state */
+.setting-toggle:not(:checked) { /* Using :not(:checked) is simpler if using checkbox logic */
+     /* If using button and JS to toggle text, apply class */
+}
+
+.setting-toggle[data-state="off"] { /* Example if using a data attribute or class */
+     background-color: #f44336; /* Red for Off */
+}
+
+
+/* --- Custom Slider Styling (Applies to .custom-slider input[type="range"]) --- */
+
+.custom-slider {
+    -webkit-appearance: none; /* Remove default webkit styles */
+    appearance: none; /* Remove default styles */
+    width: 100%; /* Full width within its container */
+    height: 20px; /* Height of the track area */
+    background: none; /* Start with no background */
+    outline: none; /* Remove outline */
+    margin: 0; /* Remove default margin */
+     padding: 0; /* Remove default padding */
+     cursor: pointer;
+     position: relative; /* Needed for absolute positioning within the slider */
+     flex-grow: 1; /* Allow slider to take available space */
+     min-width: 150px; /* Ensure slider has a minimum width */
+}
+
+/* Apply background image to the track (this is tricky cross-browser) */
+/* Webkit (Chrome, Edge, Safari) */
+.custom-slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px; /* Height of the visible track */
+    cursor: pointer;
+    background: url('image/slider.png') repeat-x center; /* Repeat track image */
+    background-size: contain; /* or auto, depending on image size */
+    border-radius: 4px; /* Match track image borders */
+    border: none; /* Remove default border */
+    /* Need to ensure the handle is centered vertically on this track height */
+}
+
+/* Firefox */
+.custom-slider::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: url('image/slider.png') repeat-x center;
+     background-size: contain;
+    border-radius: 4px;
+    border: none;
+     /* Need to ensure the handle is centered vertically on this track height */
+}
+
+/* IE */
+.custom-slider::-ms-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: url('image/slider.png') repeat-x center;
+     background-size: contain;
+    border-radius: 4px;
+    border: none;
+    color: transparent; /* Hide default track color */
+}
+
+/* Style the slider handle (thumb) */
+/* Webkit (Chrome, Edge, Safari) */
+.custom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default appearance */
+    appearance: none;
+    width: 20px; /* Width of the handle */
+    height: 20px; /* Height of the handle */
+    background: url('image/sliderbutton.png') no-repeat center center; /* Handle image */
+    background-size: cover; /* or contain, depending on image size */
+    cursor: pointer;
+    margin-top: -6px; /* Adjust vertically to center on the track (track height 8px, handle height 20px -> (20-8)/2 = 6) */
+     border: none; /* Remove default border */
+}
+
+/* Firefox */
+.custom-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: url('image/sliderbutton.png') no-repeat center center;
+    background-size: cover;
+    cursor: pointer;
+     border: none;
+     border-radius: 0; /* Pixel handle is usually square */
+}
+
+/* IE */
+.custom-slider::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: url('image/sliderbutton.png') no-repeat center center;
+     background-size: cover;
+    cursor: pointer;
+     border: none;
+     /* IE thumb alignment is notoriously difficult */
+}
+
+/* Optional: Style the progress bar (the part of the track before the thumb) */
+/* This is also tricky and often not perfectly aligned with image backgrounds */
+/*
+.custom-slider::-webkit-progress-value { background: green; } // Example
+.custom-slider::-moz-progress-bar { background: green; } // Example
+*/
+
+#close-settings {
+    margin-top: 20px;
+    display: block; /* Make it take its own line */
+    width: 100%; /* Full width button */
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    .hero-section h1 {
+        font-size: 1.8em;
+    }
+
+     .hero-section .main-bb-logo {
+        font-size: 4em;
+     }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .hero-section .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button {
+        padding: 12px 20px;
+        font-size: 1em;
+        min-width: auto;
+    }
+
+    .features-grid {
+        flex-direction: column; /* Stack feature items */
+        gap: 30px;
+    }
+
+    .feature-item {
+        flex-basis: 100%; /* Full width */
+        max-width: 100%;
+        text-align: left; /* Reset text align */
+        margin-top: 0 !important; /* Remove staggered margin */
+    }
+
+    .mod-menu-block {
+         text-align: left; /* Align text left on small screens */
+    }
+
+
+    .main-screenshot-block {
+        margin-top: 0; /* Remove negative margin */
+        margin-left: auto;
+        margin-right: auto;
+        flex-basis: 100%; /* Full width */
+    }
+
+    /* Adjust order for stacking layout */
+    .features-grid > .mod-menu-block { order: 1; }
+    .features-grid > .mod-screenshot-block { order: 2; }
+    .features-grid > .main-screenshot-block { order: 3; }
+
+
+    .creators-list {
+        flex-direction: column; /* Stack creator cards */
+        gap: 20px;
+    }
+
+    .creator-card {
+        max-width: 100%; /* Full width */
+    }
+
+    .custom-scrollbar {
+        right: 5px; /* Move closer to edge */
+        width: 5px; /* Make thinner */
+    }
+     .scrollbar-handle {
+        left: -1px; /* Adjust handle centering */
+        width: 7px;
+     }
+
+     .modal-content {
+        padding: 20px; /* Smaller padding */
+     }
+
+     .modal-content h3 {
+        font-size: 1.5em; /* Smaller heading */
+     }
+
+     .setting-row {
+         flex-direction: column; /* Stack label and control */
+         align-items: flex-start;
+         gap: 5px; /* Space between stacked items */
+     }
+
+     .setting-row label {
+         margin-right: 0; /* Remove right margin */
+     }
+
+     .setting-toggle {
+         width: 100%; /* Full width toggle */
+     }
+
+     .custom-slider {
+         width: 100%; /* Full width slider */
+          min-width: auto;
+     }
+
+}
+
+@media (max-width: 480px) {
+     header {
+         padding: 10px;
+     }
+     .logo {
+         font-size: 1em;
+     }
+     nav ul {
+         flex-direction: column;
+         gap: 5px;
+     }
+     nav a {
+         font-size: 0.9em;
+     }
+
+     .hero-section h1 {
+        font-size: 1.5em;
+    }
+
+     .hero-section .main-bb-logo {
+        font-size: 3em;
+     }
+
+    .hero-section p {
+        font-size: 0.9em;
+    }
+
+     .button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+     }
+
+     .features-section h3 { font-size: 1.5em; }
+     .mod-screenshot-block h4 { font-size: 1.2em; }
+
+     .creators-section h2 { font-size: 1.8em;}
+     .creator-card h3 { font-size: 1.2em;}
+
+     footer { font-size: 0.8em;}
+
+     /* Hide scrollbar on very small screens if desired */
+     /* .custom-scrollbar { display: none; } */
+}
